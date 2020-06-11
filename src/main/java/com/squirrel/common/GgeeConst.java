@@ -2,8 +2,8 @@ package com.squirrel.common;
 
 public class GgeeConst {
     //本地服务器-文件,图片所在位置
-    public static final String UPLOAD_FILE_PATH = "file:D:/IdeaProjects/data/springboot-squirrel/upload/";
-    public static final String UPLOAD_FILE_IMAGE_PATH = "D:/IdeaProjects/data/springboot-squirrel/upload/images/";
+    public static final String UPLOAD_FILE_PATH = "file:/Users/wangzheng/myproject/ideaproject/springboot-squirrel/src/main/resources/static/img/upload/";
+    public static final String UPLOAD_FILE_IMAGE_PATH = "/Users/wangzheng/myproject/ideaproject/springboot-squirrel/src/main/resources/static/img/upload/";
 
     //云服务器
 //    public static final String UPLOAD_FILE_PATH = "file:/root/Java/data/springboot-squirrel/upload/";

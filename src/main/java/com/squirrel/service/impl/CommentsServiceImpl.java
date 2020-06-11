@@ -33,4 +33,9 @@ public class CommentsServiceImpl implements CommentsService {
     public List<Comments> getCommentsByGoodsId(int goodsId) {
         return commentsMapper.selectByGoodsId(goodsId);
     }
+
+    @Override
+    public List<Comments> getCommentsByUserId(int userId) {
+        return commentsMapper.selectByUserId(userId);
+    }
 }

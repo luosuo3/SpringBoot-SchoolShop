@@ -40,7 +40,7 @@
             </a>
         </div>
         <!--
-            时间：2018/01/06 11:23:15
+            时间：2020/01/06 11:23:15
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -49,29 +49,30 @@
                     <img th:src="@{/img/photo.jpg}" />
                 </div>
                 <div class="big_headimg">
-                    <img src="" />
+                    <img src<i ng-click="showNotificationBox()" class="iconfont"></i>=<i ng-click="showNotificationBox()" class="iconfont"></i>"" />
                 </div>
                 <span class="name" th:text="${cur_user.username}"></span>
-                <span class="school">广东财经大学</span>
+                <span class="school">北京交通大学海滨学院</span>
                 <span class="name" th:text="'闲置数量：'+${cur_user.goodsNum}"></span>
                 <span class="fa fa-share-alt">"快去分享一下"</span>
             </div>
+<!--            <i ng-click="showNotificationBox()" class="iconfont"></i>-->
             <div class="home_nav">
                 <ul>
-                    <a href="">
+                    <a href="/user/home">
                         <li class="notice">
                             <div></div>
                             <span>我的消息</span>
                             <strong></strong>
                         </li>
                     </a>
-                    <a href="">
+                  <!--  <a href="">
                         <li class="fri">
                             <div></div>
                             <span>关注列表</span>
                             <strong></strong>
                         </li>
-                    </a>
+                    </a>-->
                     <a th:href="@{/user/basic}">
                         <li class="set">
                             <div></div>
@@ -97,7 +98,7 @@
             </div>
         </div>
         <!--
-	            时间：2018/01/06 23:22:39
+	            时间：2020/01/06 23:22:39
 	            描述：发布物品
 	            TODO::上传文件处理
         -->
@@ -166,13 +167,13 @@
             </div>
             <!--
                 TODO::目前是静态的
-                时间：2018/01/06
+                时间：2020/01/06
                 描述：最右侧,可能认识的人
             -->
             <div class="recommend">
                 <div class="title">
                     <span class="text">可能认识的人</span>
-                    <span class="change">换一组</span>
+<!--                    <span class="change">换一组</span>-->
                     <span class="underline"></span>
                 </div>
                 <ul>

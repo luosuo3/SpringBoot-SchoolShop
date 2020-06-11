@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>广财大二手工坊</title>
+    <title>北交大海滨信息工坊</title>
     <!--<link rel="stylesheet" th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" />-->
     <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/css/index.css}" />
@@ -61,29 +61,32 @@
     /*]]>*/
 </script>
 <!--
-    时间：2018/01/05 22:02:15
+    时间：2020/01/05 22:02:15
     描述：顶部
 -->
 <div ng-controller="headerController" class="header stark-components navbar-fixed ng-scope">
     <nav class="white nav1">
         <div class="nav-wrapper">
             <a th:href="@{/goods/homeGoods}" class="logo">
-                <!--<em class="em1">广财大</em>-->
+
                 <em class="em1">
-                    <span style="color: #4b82c3;">广</span>
-                    <span style="color: #ffd51f;">财</span>
+                    <span style="color: #4b82c3;">北</span>
+                    <span style="color: #ffd51f;">交</span>
                     <span style="color: #b02b1a;">大</span>
+                    <span style="color: #ea83ee;">海</span>
+                    <span style="color: #50dd5a;">滨</span>
                 </em>
-                <em class="em2">二手工坊</em>
+                <em class="em2">信息工坊</em>
                 <em class="em3">
-                    <span style="color: #d80000;">g</span>
-                    <span style="color: #48bdff;">d</span>
-                    <span style="color: #ea83ee;">u</span>
-                    <span style="color: #50dd5a;">f</span>
-                    <span style="color: #ee9946;">e</span>
-                    .market
+                    <span style="color: #d80000;">h</span>
+                    <span style="color: #48bdff;">a</span>
+                    <span style="color: #ea83ee;">i</span>
+                    <span style="color: #50dd5a;">b</span>
+                    <span style="color: #ee9946;">i</span>
+                    <span style="color: #b02b1a;">n</span>
+                    .com
                 </em>
-                <!--<em class="em3">gdufe.market</em>-->
+
             </a>
             <div class="nav-wrapper search-bar">
                 <form ng-submit="search()" class="ng-pristine ng-invalid ng-invalid-required" th:action="@{/goods/search}">
@@ -143,7 +146,7 @@
     </nav>
 </div>
 <!--
-    时间：2018/01/05 23:22:19
+    时间：2020/01/05 23:22:19
     描述：登录
 -->
 <div ng-controller="loginController" class="ng-scope">
@@ -178,7 +181,7 @@
     </div>
 </div>
 <!--
-    时间：2018/01/05 23:26:05
+    时间：2020/01/05 23:26:05
     描述：注册
 -->
 <div ng-controller="signupController" class="ng-scope">
@@ -217,7 +220,7 @@
     </div>
 </div>
 <!--
-    时间：2018/01/05 23:36:04
+    时间：2020/01/05 23:36:04
     描述：更改用户名
 -->
 <div ng-controller="changeNameController" class="ng-scope">
@@ -245,7 +248,7 @@
 </div>
 
 <!--
-    时间：2018/01/06 09:45:17
+    时间：2020/01/06 09:45:17
     描述：显示商品详情
 -->
 <div ng-controller="detailBoxController" class="detail-box stark-components z-depth-1 row ng-scope">
@@ -257,7 +260,7 @@
     <div class="col s6">
         <div class="slider" style="height: 440px;">
             <ul class="slides" style="height: 400px;">
-                <img th:src="@{'/upload/'+${goodsExtend.images[0].imgUrl}}" />
+                <img th:src="@{'/img/upload/'+${goodsExtend.images[0].imgUrl}}" />
             </ul>
             <ul class="indicators">
                 <li class="indicator-item"></li>
@@ -274,7 +277,7 @@
             <p class="bargain">可讲价</p>
             <p>
                 <i class="iconfont"></i>
-                <em class="item-location">广东财经大学</em>
+                <em class="item-location">北京交通大学海滨学院</em>
             </p>
         </div>
         <div class="publisher-info-title">
@@ -324,7 +327,7 @@
     <p class="section" th:text="${goodsExtend.goods.describle}"></p>
     <p class="section"></p>
     <p class="section">
-        联系我的时候，请说明是在广财大校园二手工坊上看见的哦~
+        联系我的时候，请说明是在北交大海滨信息工坊上看见的哦~
     </p>
 </div>
 <!--
@@ -353,7 +356,7 @@
                         <em class="ng-binding" th:text="${item.content}">不错。</em>
                     </div>
                     <div class="comment-function">
-                        <em class="time ng-biinding" th:text="${item.createAt}">2018/01/06 10:02:02</em>
+                        <em class="time ng-biinding" th:text="${item.createAt}">2020/01/06 10:02:02</em>
                         <a class="reply-or-delete" th:onclick="'detailGoodsPage.deleteCommentsAction('+${item.id}+')'" th:if="${cur_user != null and item.userId == cur_user.id}">删除</a>
                         <a class="reply-or-delete" th:onclick="'detailGoodsPage.replyCommentsModalAction('+${itemStats.index}+')'" th:if="${cur_user != null and item.userId != cur_user.id}">回复</a>
                     </div>
@@ -366,7 +369,7 @@
                         <em class="ng-binding" th:text="${item.content}">不错。</em>
                     </div>
                     <div class="comment-function">
-                        <em class="time ng-biinding" th:text="${item.createAt}">2018/01/06 10:02:02</em>
+                        <em class="time ng-biinding" th:text="${item.createAt}">2020/01/06 10:02:02</em>
                         <a class="reply-or-delete" th:onclick="'detailGoodsPage.deleteCommentsAction('+${item.id}+')'" th:if="${cur_user != null and item.userId == cur_user.id}">删除</a>
                         <a class="reply-or-delete" th:onclick="'detailGoodsPage.replyCommentsModalAction('+${itemStats.index}+')'" th:if="${cur_user != null and item.userId != cur_user.id}">回复</a>
                     </div>

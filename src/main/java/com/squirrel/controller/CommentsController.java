@@ -19,7 +19,7 @@ public class CommentsController {
     private CommentsService commentsService;
 
     //添加评论
-    @RequestMapping(value="/api/addComments", method= RequestMethod.POST)
+    @RequestMapping(value = "/api/addComments", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult addaddComments(@RequestBody Comments comments) {
         AjaxResult ajaxResult = new AjaxResult();
@@ -29,7 +29,7 @@ public class CommentsController {
     }
 
     //更新评论
-    @RequestMapping(value="/api/updateComments", method= RequestMethod.POST)
+    @RequestMapping(value = "/api/updateComments", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult updateComments(@RequestBody Comments comments) {
         AjaxResult ajaxResult = new AjaxResult();

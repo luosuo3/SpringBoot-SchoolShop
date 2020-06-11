@@ -124,4 +124,11 @@
         from t_shop_comments
         where goods_id = #{goodsId,jdbcType=INTEGER}
     </select>
+
+    <select id="selectByUserId" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+        select
+        *
+        from t_shop_comments
+        where user_id= #{userId,jdbcType=INTEGER}
+    </select>
 </mapper>

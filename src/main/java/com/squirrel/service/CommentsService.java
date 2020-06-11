@@ -13,4 +13,5 @@ public interface CommentsService {
     boolean deleteCommentsById(int id);
 
     List<Comments> getCommentsByGoodsId(int goodsId);
+    List<Comments> getCommentsByUserId(int userId);
 }

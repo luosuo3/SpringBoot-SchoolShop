@@ -24,4 +24,6 @@ public interface CommentsMapper {
     int updateByPrimaryKey(Comments record);
 
     List<Comments> selectByGoodsId(Integer goodsId);
+    List<Comments> selectByUserId(Integer userId);
+
 }

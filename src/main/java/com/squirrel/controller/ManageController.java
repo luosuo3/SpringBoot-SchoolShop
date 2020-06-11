@@ -1,24 +1,20 @@
 package com.squirrel.controller;
 
 import com.squirrel.common.GgeeConst;
-import com.squirrel.dto.AjaxResult;
 import com.squirrel.pojo.Catelog;
 import com.squirrel.pojo.Goods;
 import com.squirrel.pojo.User;
 import com.squirrel.service.CatelogService;
 import com.squirrel.service.GoodsService;
 import com.squirrel.service.UserService;
-import com.squirrel.util.MD5;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -37,7 +33,7 @@ public class ManageController {
     /**
      * 管理员登录页
      */
-    @RequestMapping(value="/login", method= RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, Model model) {
         User currentUser = (User) request.getSession().getAttribute(GgeeConst.CUR_USER);
         model.addAttribute(GgeeConst.CUR_USER, currentUser);
@@ -51,10 +47,10 @@ public class ManageController {
     /**
      * 用户管理
      */
-    @RequestMapping(value="/user/list", method= RequestMethod.GET)
+    @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     public String userList(HttpServletRequest request,
-                              @RequestParam(value = "page", defaultValue = "1") int page,
-                              Model model) {
+                           @RequestParam(value = "page", defaultValue = "1") int page,
+                           Model model) {
         User currentUser = (User) request.getSession().getAttribute(GgeeConst.CUR_USER);
         model.addAttribute(GgeeConst.CUR_USER, currentUser);
         if (currentUser == null || currentUser.getPower() != 90) {
@@ -69,12 +65,12 @@ public class ManageController {
     /**
      * 商品管理
      */
-    @RequestMapping(value="/goods/list", method= RequestMethod.GET)
+    @RequestMapping(value = "/goods/list", method = RequestMethod.GET)
     public String goodsList(HttpServletRequest request,
-                           @RequestParam(value = "page", defaultValue = "1") int page,
-                           @RequestParam(value = "catelogId", defaultValue = "0") int catelogId,
-                           @RequestParam(value = "text", required = false) String text,
-                           Model model) {
+                            @RequestParam(value = "page", defaultValue = "1") int page,
+                            @RequestParam(value = "catelogId", defaultValue = "0") int catelogId,
+                            @RequestParam(value = "text", required = false) String text,
+                            Model model) {
         User currentUser = (User) request.getSession().getAttribute(GgeeConst.CUR_USER);
         model.addAttribute(GgeeConst.CUR_USER, currentUser);
         if (currentUser == null || currentUser.getPower() != 90) {

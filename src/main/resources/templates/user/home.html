@@ -7,6 +7,9 @@
     <link rel="stylesheet" th:href="@{/css/emoji.css}" />
     <link rel="stylesheet" th:href="@{/css/userhome.css}" />
     <link rel="stylesheet" th:href="@{/css/user.css}" />
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 </head>
 <body>
 <div class="pre-2" id="big_img">
@@ -23,7 +26,7 @@
             </a>
         </div>
         <!--
-            时间：2018/01/06 11:23:15
+            时间：2020/01/06 11:23:15
             描述：左侧个人中心栏
         -->
         <div id="user_nav">
@@ -35,26 +38,26 @@
                     <img src="" />
                 </div>
                 <span class="name" th:text="${cur_user.username}"></span>
-                <span class="school">广东财经大学</span>
+                <span class="school">北京交通大学海滨学院</span>
                 <span class="name" th:text="'闲置数量：'+${cur_user.goodsNum}"></span>
                 <span class="fa fa-share-alt">"快去分享一下"</span>
             </div>
             <div class="home_nav">
                 <ul>
-                    <a href="">
+                    <a href="/user/home">
                         <li class="notice">
                             <div></div>
                             <span>我的消息</span>
                             <strong></strong>
                         </li>
                     </a>
-                    <a href="">
+                   <!-- <a href="">
                         <li class="fri">
                             <div></div>
                             <span>关注列表</span>
                             <strong></strong>
                         </li>
-                    </a>
+                    </a>-->
                     <a th:href="@{/user/basic}">
                         <li class="set">
                             <div></div>
@@ -80,12 +83,23 @@
             </div>
         </div>
         <!--
-            时间：2018/01/06 11:28:20
+            时间：2020/01/06 11:28:20
             描述：右侧内容区域
         -->
         <div id="user_content">
             <div class="share">
-                <div class="publish">
+
+                    <div class="panel panel-info" th:each="message :${messages}">
+                        <a th:href="@{'/goods/goodsId/'+${message.getGoodsId()}}">
+                        <div class="panel-body"  th:text="${message.getUserName()}">
+                            Panel content
+                        </div>
+                        <div class="panel-footer" th:text="${message.getContent()}">Panel footer</div>
+                        </a>
+                    </div>
+
+
+                <!--<div class="publish">
                     <div class="pub_content">
                         <div class="text_pub lead emoji-picker-container">
                             <input type="text" name="text" data-emojiable="converted" class="form-control" data-type="original-input" style="display: none;"/>
@@ -98,7 +112,7 @@
                         </div>
                     </div>
                     <div class="button">
-                        <!-- TODO::上传图片 -->
+                        &lt;!&ndash; TODO::上传图片 &ndash;&gt;
                         <span class="fa fa-image">
                             ::before
                             <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" />
@@ -107,9 +121,9 @@
                             <button>发 布</button>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!--
-                    时间：2018/01/06
+                    时间：2020/01/06
                     描述：闲置商品展示
                 -->
                 <div class="share_content">
@@ -120,13 +134,13 @@
             </div>
             <!--
                 TODO::目前是静态的
-                时间：2018/01/06
+                时间：2020/01/06
                 描述：最右侧,可能认识的人
             -->
             <div class="recommend">
                 <div class="title">
                     <span class="text">可能认识的人</span>
-                    <span class="change">换一组</span>
+<!--                    <span class="change">换一组</span>-->
                     <span class="underline"></span>
                 </div>
                 <ul>
